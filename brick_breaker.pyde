@@ -85,14 +85,7 @@ def createGame():
     if showbrick3 == True: #different color brick
         fill(r,g,b)
         rect(200,0,100,20)
-    #     if ball_x > 200 and ball_x < 300 and ball_y > 0 and ball_y < 35:
-    #         showpowerup = True
-    # if showpowerup ==True:
-    #     ellipse(ball_b,ball_a,20,20)
-    #     ball_a = ball_a + a_speed
-    #     ball_b = ball_b + b_speed
 
-        
     fill(87,16,16)
     strokeWeight(2)
     if showbrick4 == True:
@@ -303,14 +296,18 @@ def draw():
     if ball_x > 200 and ball_x < 300 and ball_y > 80 and ball_y < 100 and showbrick15 == True:
         showbrick15 = False
         scoreboard = scoreboard + 10
-        y_speed = -1*y_speed  
-        
+        y_speed = -1*y_speed 
         
     if ball_y > 400:
         f= createFont("Notable-Regular.ttf",50)
         textFont(f)
         fill(0,0,0)
         text("GAME OVER..",50,250)
+        
+        f= createFont("Notable-Regular.ttf",20)
+        textFont(f)
+        fill(0,0,0)
+        text("Press r to restart",90,290)
         
     f= createFont("Notable-Regular.ttf",20)
     textFont(f)
@@ -326,6 +323,35 @@ def draw():
         text("WINNER!!",100,250)
         y_speed = 0
         x_speed = 0
+        
+    if keyPressed and key == 'r':
+        showbrick1 = True
+        showbrick2 = True
+        showbrick3 = True
+        showbrick4 = True
+        showbrick5 = True
+        showbrick6 = True
+        showbrick7 = True
+        showbrick8 = True
+        showbrick9 = True
+        showbrick10 = True
+        showbrick11 = True
+        showbrick12 = True
+        showbrick13 = True
+        showbrick14 = True
+        showbrick15 = True
+        showpowerup = False
+        
+        ball_x = 250
+        ball_y = 100
+        y_speed = 2
+        x_speed = 2
+        ball_a = 40 
+        a_speed = 1 
+        ball_b = 340 
+        b_speed = 0
+        paddle_width = 130
+        scoreboard = 0
 
     createGame()
 
